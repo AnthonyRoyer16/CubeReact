@@ -1,7 +1,6 @@
 import React, { useState }  from 'react';
 import { Col, Dropdown, Menu, Row, Typography } from 'antd';
 import { Layout, Image } from 'antd';
-import { strict } from 'node:assert';
 import {Link} from "react-router-dom";
 import '../App.css';
 import {Page} from "../Layout/Page";
