@@ -1,14 +1,8 @@
-import React, { useState }  from 'react';
-import { Col, Dropdown, Input, Menu, Row, Typography } from 'antd';
-import { Layout } from 'antd';
+import { Col, Dropdown, Input, Menu, Row, Layout } from 'antd';
 import {UserOutlined, HomeOutlined,  HeartOutlined, MessageOutlined,BellOutlined, DownOutlined, SettingOutlined} from '@ant-design/icons';
-import {themeColors} from "./Theme"
 import {Link} from "react-router-dom";
-
  
 const { Header, Footer, Content } = Layout;
- 
-const { Title, Text } = Typography;
  
 type Props = {
  children: React.ReactNode;

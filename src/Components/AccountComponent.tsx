@@ -1,5 +1,4 @@
-import { Col, message, Row } from 'antd';
-import { Form, Input, Button } from 'antd';
+import { Col, message, Row, Form, Input, Button } from 'antd';
 import Logo from "./resources.png";
 import { Image } from 'antd';
 import {ArrowRightOutlined} from "@ant-design/icons"
