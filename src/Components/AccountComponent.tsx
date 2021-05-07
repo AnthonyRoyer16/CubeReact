@@ -1,0 +1,79 @@
+import { Col, message, Row } from 'antd';
+import React, { useState }  from 'react';
+import { Form, Input, Button, Checkbox } from 'antd';
+import Logo from "./resources.png";
+import { Image } from 'antd';
+import {ArrowRightOutlined} from "@ant-design/icons"
+import { Redirect } from 'react-router-dom';
+
+function AccountComponent() {
+
+      const onFinish = (values: any) => {
+        message.success('Vous etes connecter !');
+        window.location.href="/"
+      };
+    
+      const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+      };
+      
+
+   return (
+    <>
+        <Row style={{position:"absolute", top:"0", left:"0", width:"100%", height:"100%", minHeight:"600px"}}>
+            <Col span={14}>
+                <Row style={{width:"100%",height:"100%"}}>
+                    <Col span={24} style={{ display:"flex", transform: "translateX(30%)", alignItems: "center" }}>
+                        <Form
+                            layout="vertical"
+                            name="basic"
+                            initialValues={{ remember: true }}
+                            onFinish={onFinish}
+                            onFinishFailed={onFinishFailed}
+                            >
+                            <Form.Item
+                                label="Email"
+                                name="email"
+                                rules={[{ required: true, message: 'Please input your username!' }]}
+                            >
+                                <Input className="login-input" />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Mote de passe"
+                                name="password"
+                                rules={[{ required: true, message: 'Please input your password!' }]}
+                            >
+                                <Input.Password className="login-input" />
+                            </Form.Item>
+
+                            <Form.Item>
+                                <Button type="primary" htmlType="submit">
+                                Se connecter ! <ArrowRightOutlined />
+                                </Button>
+                            </Form.Item>
+                            <Row>
+                                <Col>
+                                    <a className="forget">Mot de passe oublié ?</a>
+                                </Col>
+                            </Row>
+                        </Form>
+                    </Col>
+                </Row>
+            </Col>
+            <Col span={10} style={{backgroundColor:"#75BFBF"}}>
+                <Row style={{display:"block", marginLeft:"35%", marginTop:"40%"}}>
+                    <Image
+                        width={200}
+                        src={Logo}
+                        preview={false}
+                    />
+                </Row>
+            </Col>
+        </Row>
+    </>
+   );
+};
+ 
+ 
+export { AccountComponent };

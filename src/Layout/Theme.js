@@ -1,0 +1,1 @@
+export const themeColors = { primaryColor:"#05A6A6", secondaryColor:"#75BFBF"};
