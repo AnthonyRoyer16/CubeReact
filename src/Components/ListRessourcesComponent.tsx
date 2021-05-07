@@ -1,16 +1,8 @@
-import React, { useState }  from 'react';
-import { Col, Dropdown, Menu, Row, Typography } from 'antd';
-import { Layout, Image } from 'antd';
-import {Link} from "react-router-dom";
+import { Col, Row } from 'antd';
 import '../App.css';
-import {Page} from "../Layout/Page";
-import Logo from "./image-icon.png";
 import { FileImageOutlined, LikeOutlined, DownloadOutlined, FundViewOutlined } from '@ant-design/icons';
 
- 
-const { Header, Footer, Content } = Layout;
- 
-const { Title, Text } = Typography;
+
 
 function ListRessourcesComponent(DataSource: any) {
 

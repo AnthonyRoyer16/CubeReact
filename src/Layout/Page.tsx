@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
-import { Button, Col, Dropdown, Input, Menu, Row, Typography } from 'antd';
-import { Layout, Image } from 'antd';
+import { Col, Dropdown, Input, Menu, Row, Typography } from 'antd';
+import { Layout } from 'antd';
 import {UserOutlined, HomeOutlined,  HeartOutlined, MessageOutlined,BellOutlined, DownOutlined, SettingOutlined} from '@ant-design/icons';
 import {themeColors} from "./Theme"
 import {Link} from "react-router-dom";
@@ -34,8 +34,6 @@ const Page: React.FC<Props> = ({children, header}: Props) => {
       </Menu.Item>
     </Menu>
   );
-
-   const [primaryColor, setPrimaryColor] = useState(JSON.stringify(themeColors.primaryColor));
  
    return (
     <Layout>

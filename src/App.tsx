@@ -1,11 +1,9 @@
-import {PageTest} from "./Page/PageTest/PageTest"
+import {PageHome} from "./Page/PageHome/PageHome"
 import {PageAccount} from "./Page/PageAccount/PageAccount"
-import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 export default function App() {
@@ -16,7 +14,7 @@ export default function App() {
             <PageAccount />
           </Route>
           <Route path="/">
-            <PageTest />
+            <PageHome />
           </Route>
         </Switch>
     </Router>

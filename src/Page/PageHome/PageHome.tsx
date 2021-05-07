@@ -1,5 +1,3 @@
-import React, { useState }  from 'react';
-import { Typography } from 'antd';
 import '../../App.css';
 import {Page} from "../../Layout/Page"
 import { ListRessourcesComponent } from '../../Components/ListRessourcesComponent';
@@ -68,7 +66,7 @@ const dataSource = [
 },
 ]
 
-function PageTest() {
+function PageHome() {
 
   dataSource.map((item: any) => {
     console.log(item)
@@ -85,4 +83,4 @@ function PageTest() {
  
  
  
-export { PageTest };
+export { PageHome };

@@ -1,16 +1,22 @@
 import { Col, message, Row } from 'antd';
-import React, { useState }  from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 import Logo from "./resources.png";
 import { Image } from 'antd';
 import {ArrowRightOutlined} from "@ant-design/icons"
-import { Redirect } from 'react-router-dom';
 
 function AccountComponent() {
+    
+
+      const sleep = (time: number) => {
+        return new Promise((resolve) => setTimeout(resolve, time));
+      }
 
       const onFinish = (values: any) => {
-        message.success('Vous etes connecter !');
-        window.location.href="/"
+        message.success('Connecter !');
+        sleep(1000).then(() => {
+            window.location.href = "/"
+        });
+        
       };
     
       const onFinishFailed = (errorInfo: any) => {

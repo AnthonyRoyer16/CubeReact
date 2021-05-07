@@ -1,2 +1,2 @@
 export { PageAccount } from "./PageAccount/PageAccount"
-export { PageTest } from "./PageTest/PageTest"
+export { PageHome } from "./PageHome/PageHome"
