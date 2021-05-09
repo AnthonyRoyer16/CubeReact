@@ -23,6 +23,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - run: run start
+    - run: npm cy:run 
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.6
