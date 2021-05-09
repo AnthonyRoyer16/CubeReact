@@ -67,12 +67,6 @@ const dataSource = [
 ]
 
 function PageHome() {
-
-  dataSource.map((item: any) => {
-    console.log(item)
-  })
- 
-  console.log(dataSource)
   
    return (
     <Page header={true}>

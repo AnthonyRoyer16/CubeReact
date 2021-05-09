@@ -59,7 +59,7 @@ function AccountComponent() {
                             </Form.Item>
                             <Row>
                                 <Col>
-                                    <a className="forget">Mot de passe oublié ?</a>
+                                    <a className="forget" href="/">Mot de passe oublié ?</a>
                                 </Col>
                             </Row>
                         </Form>
