@@ -1,0 +1,13 @@
+const UPDATE = "UPDATE";
+const DELETE = "DELETE";
+const SUCCESS = "SUCCESS";
+const ERROR = "ERROR";
+const RESET_STATE = "RESET_STATE";
+
+export {
+  UPDATE,
+  DELETE,
+  SUCCESS,
+  ERROR,
+  RESET_STATE,
+};

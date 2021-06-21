@@ -21,10 +21,14 @@ const Page: React.FC<Props> = ({children, header}: Props) => {
         </Link>
       </Menu.Item>
       <Menu.Item key="2" icon={<UserOutlined />}>
-        2nd menu item
+      <Link to="/accountLogged">
+          Mon Compte (Logged)
+        </Link>
       </Menu.Item>
       <Menu.Item key="3" icon={<UserOutlined />}>
-        3rd menu item
+        <Link to="/signIn">
+          Inscription
+        </Link>
       </Menu.Item>
     </Menu>
   );
@@ -34,10 +38,10 @@ const Page: React.FC<Props> = ({children, header}: Props) => {
       {header ?
     <Header className="header" style={{position:"fixed",width:"100%", backgroundColor:"#05A6A6", paddingBottom:"15px"}}>
       <Row>
-        <Col span={17}  style={{paddingTop:"12.5px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
+        <Col span={18}  style={{paddingTop:"12.5px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
           <Input.Search className="center" size="large" style={{width: "60%", display:"block", float:"right"}} placeholder="Rechercher une ressource" />
         </Col>
-        <Col span={7}  style={{paddingTop:"15px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
+        <Col span={6}  style={{paddingTop:"15px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
         <BellOutlined className="center" style={{paddingTop:"6px",position:"absolute", right:"15%", color:"white", fontSize:"20px"}}/>
           <Dropdown className="center" overlay={menu} placement="bottomCenter" arrow>
             <SettingOutlined style={{paddingTop:"6px", color:"white", fontSize:"20px",position:"absolute", right:"5%"}}>
@@ -47,7 +51,7 @@ const Page: React.FC<Props> = ({children, header}: Props) => {
         </Col>
       </Row>
     </Header>: null}
-    <Content style={{justifyContent: "center",paddingTop:"11px" ,marginLeft:"20%", marginTop: "6.1%", minHeight:"650px", width:"60%"}}>{children}</Content>
+    <Content style={{justifyContent: "center",paddingTop:"11px" ,marginLeft:"10%", marginTop: "6.1%", minHeight:"650px", minWidth:"60%"}}>{children}</Content>
     <Footer style={{position:"fixed", width:"100%", height:"9.5%", bottom:"0", backgroundColor:"#05A6A6"}}>
        <Row justify="center">
           <Col className="center" span={3}>

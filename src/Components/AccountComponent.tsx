@@ -39,6 +39,7 @@ function AccountComponent() {
                             <Form.Item
                                 label="Email"
                                 name="email"
+                                style={{width: '200%'}}
                                 rules={[{ required: true, message: 'Please input your username!' }]}
                             >
                                 <Input className="login-input" />
@@ -47,6 +48,7 @@ function AccountComponent() {
                             <Form.Item
                                 label="Mote de passe"
                                 name="password"
+                                style={{width: '200%'}}
                                 rules={[{ required: true, message: 'Please input your password!' }]}
                             >
                                 <Input.Password className="login-input" />

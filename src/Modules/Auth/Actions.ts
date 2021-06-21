@@ -1,0 +1,19 @@
+const SIGN_IN = "SIGN_IN";
+const SIGN_OUT = "SIGN_OUT";
+const LOGIN = "LOGIN";
+const LOGOUT = "LOGOUT";
+const AUTHENTICATE = "AUTHENTICATE";
+const SUCCESS = "SUCCESS";
+const ERROR = "ERROR";
+const RESET_STATE = "RESET_STATE";
+
+export {
+  SIGN_IN,
+  SIGN_OUT,
+  LOGIN,
+  LOGOUT,
+  AUTHENTICATE,
+  SUCCESS,
+  ERROR,
+  RESET_STATE,
+};

@@ -1,5 +1,4 @@
-import {PageHome} from "./Page/PageHome/PageHome"
-import {PageAccount} from "./Page/PageAccount/PageAccount"
+import {PageHome, PageAccount, PageAccountLogged, PageRegister} from "./Page"
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,6 +9,12 @@ export default function App() {
   return (
     <Router>
         <Switch>
+          <Route path="/signIn">
+            <PageRegister />
+          </Route>
+          <Route path="/accountLogged">
+            <PageAccountLogged />
+          </Route>
           <Route path="/account">
             <PageAccount />
           </Route>

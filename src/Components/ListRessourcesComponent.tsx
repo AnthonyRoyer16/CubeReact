@@ -8,7 +8,7 @@ function ListRessourcesComponent(DataSource: any) {
 
    return (
     <>
-        <Row style={{paddingBottom:"15%", color:"#F2F2F2", fontWeight:"bolder", paddingLeft:"12%", width:"86%"}}>
+        <Row style={{paddingBottom:"15%", color:"#F2F2F2", fontWeight:"bolder", paddingLeft:"12%", width:"80%"}}>
          {   
          DataSource.DataSource.map( (item: any) => 
          <Col span={24} style={{marginBottom:"20px"}}>
