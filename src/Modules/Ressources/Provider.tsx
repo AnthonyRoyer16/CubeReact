@@ -3,7 +3,9 @@ import { Reducer, InitialState } from "./Reducer";
 import { Props, State, Dispatch } from "./Types";
 import {
   FETCH,
-  GET_ACCOUNT,
+  GET_RESSOURCES,
+  SEARCH,
+  SUCCESS_SEARCH,
   ERROR,
   UPDATE,
   DELETE,
@@ -24,15 +26,17 @@ const Provider: React.FC<Props> = ({ children }: Props) => {
 
   const middlewareDispatch = useCallback(async (action) => {
     switch (action.type) {
-      case GET_ACCOUNT: {
+      case GET_RESSOURCES: {
         try {
           dispatch({
             type: FETCH,
           });
-          const response: any = await fetch("get", endpoint);
+          //const response: any = await fetch("get", endpoint);
+          const response: any = [{test:"test"}];
+          //console.log(response)
           dispatch({
             type: SUCCESS,
-            payload: response.body,
+            payload: response,
           });
         } catch (error) {
           dispatch({
@@ -40,6 +44,26 @@ const Provider: React.FC<Props> = ({ children }: Props) => {
             payload: error.status,
           });
         }
+        break;
+      }
+      case SEARCH: {
+        try {
+          dispatch({
+            type: FETCH,
+          });
+          dispatch({
+            type: SUCCESS_SEARCH,
+            payload: action.payload,
+          });
+        } catch (error) {
+          dispatch({
+            type: ERROR,
+            payload: error.status,
+          });
+        }
+        dispatch({
+          type: RESET_STATE,
+        });
         break;
       }
       case UPDATE: {

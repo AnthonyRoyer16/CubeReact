@@ -1,6 +1,7 @@
 import { Action, State } from "./Types";
 import { LOGIN, LOGOUT, SUCCESS, ERROR, RESET_STATE } from "./Actions";
-import { getToken } from "core/token";
+import { getToken } from "../../Core/Token";
+//import { getToken } from "../../Core/token";
 
 const InitialState = {
   auth: Boolean(getToken()),

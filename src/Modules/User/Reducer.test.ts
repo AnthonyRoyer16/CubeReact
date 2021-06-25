@@ -1,6 +1,6 @@
-import { Reducer, InitialState } from "modules/Auth/Reducer";
+import { Reducer, InitialState } from "../../Modules/Auth/Reducer";
 
-jest.mock("core/token");
+jest.mock("../../Core/Token");
 
 describe("Auth Reducer", () => {
   it("should run action with LOGIN type", () => {

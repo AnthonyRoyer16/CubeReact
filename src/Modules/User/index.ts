@@ -1,4 +1,4 @@
 export {
-  useState as useUsertate,
+  useState as useUserState,
   useDispatch as useUserDispatch,
 } from "./Hooks";

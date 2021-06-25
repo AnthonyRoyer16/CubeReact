@@ -1,8 +1,8 @@
 describe("go to home page and then register page", () => {
     it("should go the page", () =>{
         cy.visit("/");
-        cy.visit("/signIn");
-        cy.url().should('include', '/signIn')
+        cy.visit("/accountLogged");
+        cy.url().should('include', '/accountLogged')
     });
 
 });

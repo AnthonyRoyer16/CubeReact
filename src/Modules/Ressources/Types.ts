@@ -3,7 +3,8 @@ export type Props = {
 };
 
 export type State = {
-  auth: boolean;
+  ressources: Array<Object>;
+  search: string;
   loading?: boolean;
   error?: boolean;
   status?: any;
@@ -13,7 +14,11 @@ export type Dispatch = (action: Action) => void;
 
 export type Action = {
   type:
-    | "SIGN_IN"
+    | "FETCH"
+    | "GET_RESSOURCES"
+    | "SEARCH"
+    | "SUCCESS_SEARCH"
+    | "UPDATE"
     | "SIGN_OUT"
     | "LOGIN"
     | "LOGOUT"
@@ -24,11 +29,3 @@ export type Action = {
   payload?: any;
 };
 
-export type Request = {
-  email: string;
-  password: string;
-};
-
-export type Response = {
-  body: { token: string; expired: string };
-};

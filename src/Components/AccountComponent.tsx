@@ -19,7 +19,6 @@ function AccountComponent() {
       };
     
       const onFinishFailed = (errorInfo: any) => {
-        console.log('Failed:', errorInfo);
       };
       
 
@@ -39,18 +38,22 @@ function AccountComponent() {
                             <Form.Item
                                 label="Email"
                                 name="email"
-                                style={{width: '200%'}}
-                                rules={[{ required: true, message: 'Please input your username!' }]}
+                                style={{width: '320px'}}
+                                rules={[{ required: true, message: 'Veuillez rentrer vôtre email!' }]}
                             >
-                                <Input className="login-input" />
+                                <Input type="email" className="login-input" />
                             </Form.Item>
 
                             <Form.Item
                                 label="Mote de passe"
                                 name="password"
-                                style={{width: '200%'}}
-                                rules={[{ required: true, message: 'Please input your password!' }]}
-                            >
+                                style={{width: '320px'}}
+                                rules={[
+                                    {required: true, message: "Veuillez rentrer un mot de passe"},
+                                    {
+                                        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{12,})/gm,
+                                        message: "Le mot de passe n'est pas correcte",
+                                      },]}>
                                 <Input.Password className="login-input" />
                             </Form.Item>
 

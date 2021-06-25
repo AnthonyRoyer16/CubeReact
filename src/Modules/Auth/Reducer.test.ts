@@ -1,12 +1,11 @@
-import { Reducer, InitialState } from "modules/Auth/Reducer";
+import { Reducer, InitialState } from "./Reducer";
 
-jest.mock("core/token");
+jest.mock("../../Core/Token");
 
 describe("Auth Reducer", () => {
   it("should run action with LOGIN type", () => {
   
     const state = Reducer(InitialState, { type: "LOGIN" });
-    console.log(InitialState)
     expect(state.auth).toBeFalsy();
     expect(state.loading).toBeTruthy();
   });

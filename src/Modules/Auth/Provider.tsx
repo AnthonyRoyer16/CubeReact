@@ -11,8 +11,8 @@ import {
   ERROR,
   RESET_STATE,
 } from "./Actions";
-import { fetch } from "core/services";
-import { clear } from "core/tools";
+import { fetch } from "../../Core/Services";
+import { clear } from "../../Core/Tools";
 
 const endpoint = "auth";
 
@@ -20,6 +20,7 @@ const Context = createContext<State | undefined>(undefined);
 const DispatchContext = createContext<Dispatch | undefined>(undefined);
 
 const Provider: React.FC<Props> = ({ children }: Props) => {
+
   const [state, dispatch] = useReducer(Reducer, InitialState);
 
   const middlewareDispatch = useCallback(async (action) => {

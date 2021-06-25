@@ -1,6 +1,10 @@
-import { Col, Dropdown, Input, Menu, Row, Layout } from 'antd';
-import {UserOutlined, HomeOutlined,  HeartOutlined, MessageOutlined,BellOutlined, DownOutlined, SettingOutlined} from '@ant-design/icons';
-import {Link} from "react-router-dom";
+import { Col, Dropdown, Input, Menu, Row, Layout, Image } from 'antd';
+import { UserOutlined, HomeOutlined,  HeartOutlined, MessageOutlined,BellOutlined, DownOutlined, SettingOutlined } from '@ant-design/icons';
+import { Link } from "react-router-dom";
+import logo from '../Components/resources.png';
+import { Children, useEffect, useState } from 'react';
+import { SEARCH } from "../Modules/Ressources/Actions";
+import { useRessourcesState, useRessourcesDispatch } from "../Modules/Ressources";
  
 const { Header, Footer, Content } = Layout;
  
@@ -9,12 +13,37 @@ type Props = {
  header: boolean
 };
 
+
 //Test
 
 const Page: React.FC<Props> = ({children, header}: Props) => {
 
+  const { loading, error, status, search } = useRessourcesState();
+  const dispatch = useRessourcesDispatch();
+
+  const [searchRessources, setSearch] = useState<string>("");
+
+
+  const sendSearchedRessources = () => {
+      searchRessources !== "" && 
+      dispatch({
+        type: SEARCH,
+        payload: searchRessources,
+      });
+    }
+
+    useEffect(() => {
+      children &&
+      window.location.href !== "http://localhost:3000/" &&
+      dispatch({
+        type: SEARCH,
+        payload: "",
+      })
+    }, [children]);
+    
+
   const menu = (
-    <Menu   >
+    <Menu>
       <Menu.Item key="1" icon={<UserOutlined />}>
         <Link to="/account">
           Mon Compte
@@ -36,12 +65,15 @@ const Page: React.FC<Props> = ({children, header}: Props) => {
    return (
     <Layout>
       {header ?
-    <Header className="header" style={{position:"fixed",width:"100%", backgroundColor:"#05A6A6", paddingBottom:"15px"}}>
+      <Header className="header" style={{position:"fixed",width:"100%", backgroundColor:"#05A6A6", paddingBottom:"15px", borderWidth: "0px 0px 1px 0.5px",borderStyle: "solid", borderColor: "darkslategrey"}}>
       <Row>
-        <Col span={18}  style={{paddingTop:"12.5px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
-          <Input.Search className="center" size="large" style={{width: "60%", display:"block", float:"right"}} placeholder="Rechercher une ressource" />
+        <Col span={1} style={{paddingTop:"6px",display:"flex",flexDirection:"column",alignItems: "start"}} >
+          <Image onClick={() => window.location.href = "/"} width={50} src={logo} preview={false}/>
         </Col>
-        <Col span={6}  style={{paddingTop:"15px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
+        <Col span={16}  style={{paddingTop:"12.5px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
+          <Input.Search value={searchRessources}  onChange={(e) => setSearch(e.target.value)} onSearch={sendSearchedRessources} className="center" size="large" style={{width: "60%", display:"block", float:"right"}} placeholder="Rechercher une ressource" />
+        </Col>
+        <Col span={7}  style={{paddingTop:"15px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
         <BellOutlined className="center" style={{paddingTop:"6px",position:"absolute", right:"15%", color:"white", fontSize:"20px"}}/>
           <Dropdown className="center" overlay={menu} placement="bottomCenter" arrow>
             <SettingOutlined style={{paddingTop:"6px", color:"white", fontSize:"20px",position:"absolute", right:"5%"}}>

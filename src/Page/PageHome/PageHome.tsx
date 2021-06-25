@@ -70,7 +70,7 @@ function PageHome() {
   
    return (
     <Page header={true}>
-      <ListRessourcesComponent DataSource={dataSource}/>
+      <ListRessourcesComponent />
     </Page>
    );
 };

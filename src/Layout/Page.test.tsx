@@ -1,6 +1,7 @@
 import { act, render, screen } from "@testing-library/react";
 import { Page } from "./Page"
 import { BrowserRouter } from "react-router-dom"
+import { RessourcesProvider } from "../Modules/Index";
 
 beforeAll(() => {
     delete window.matchMedia
@@ -22,9 +23,11 @@ describe("Page Layout test elements", () => {
       act(() => {
         const { container } = render(
             <BrowserRouter>
+              <RessourcesProvider>
               <Page header={true}>
                 <></>
               </Page>
+              </RessourcesProvider>
             </BrowserRouter>
         );
         expect(screen.queryByPlaceholderText(/Rechercher une ressource/i)).toBeTruthy();

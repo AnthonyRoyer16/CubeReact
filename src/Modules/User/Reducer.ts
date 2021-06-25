@@ -1,9 +1,8 @@
 import { Action, State } from "./Types";
-import { LOGIN, LOGOUT, SUCCESS, ERROR, RESET_STATE } from "./Actions";
-import { getToken } from "core/token";
+import { FETCH, SUCCESS, ERROR, RESET_STATE } from "./Actions";
 
 const InitialState = {
-  auth: Boolean(getToken()),
+  user: {},
   loading: false,
   error: false,
   status: null,
@@ -11,23 +10,16 @@ const InitialState = {
 
 const Reducer = (state: State = InitialState, action: Action) => {
   switch (action.type) {
-    case LOGIN: {
-      return { ...state, loading: true, error: false };
-    }
-    case LOGOUT: {
-      return {
-        ...state,
-        auth: false,
-        isexpired: false,
-        loading: false,
-        error: false,
-      };
+    case FETCH: {
+      return { ...state, loading: true };
     }
     case SUCCESS: {
       return {
-        auth: true,
+        ...state,
         loading: false,
         error: false,
+        success: true,
+        user: action.payload,
       };
     }
     case ERROR: {
