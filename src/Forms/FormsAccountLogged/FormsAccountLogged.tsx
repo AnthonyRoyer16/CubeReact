@@ -2,14 +2,13 @@ import '../../App.css';
 import {Row, Col, Typography, Form, Input, Button} from "antd";
 
 import { UPDATE } from "../../Modules/User/Actions";
-import { useUserState, useUserDispatch } from "../../Modules//User";
-import { useEffect, useState } from 'react';
+import { /*useUserState,*/ useUserDispatch } from "../../Modules//User";
 
 function FormsAccountLogged() {
 
     const { Title } = Typography;
 
-    const { loading, error, status, user } = useUserState();
+   // const { } = useUserState();
     const dispatch = useUserDispatch();
 
 

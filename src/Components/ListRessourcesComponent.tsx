@@ -1,19 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Col, Row } from 'antd';
 import '../App.css';
-import { FileImageOutlined, LikeOutlined, DownloadOutlined, FundViewOutlined, HeartTwoTone, HeartFilled} from '@ant-design/icons';
-import { GET_RESSOURCES, SEARCH } from "../Modules/Ressources/Actions";
+import { FileImageOutlined, LikeOutlined, DownloadOutlined, FundViewOutlined, HeartFilled} from '@ant-design/icons';
+//import { GET_RESSOURCES, SEARCH } from "../Modules/Ressources/Actions";
 import { useRessourcesState, useRessourcesDispatch } from "../Modules/Ressources";
 import { useEffect, useState } from 'react';
-import { checkCase } from "../Core/Tools/index";
-import { find, propEq, where, includes, filter, isNil } from "ramda";
-import { successMessage, errorMessage } from '../Core/Tools'
+import { where, includes, filter, isNil } from "ramda";
+import { errorMessage } from '../Core/Tools'
 
 
 function ListRessourcesComponent() {
 
-    const { loading, error, status, search, ressources } = useRessourcesState();
-    const dispatch = useRessourcesDispatch();
+    const { search, ressources } = useRessourcesState();
+    //const dispatch = useRessourcesDispatch();
 
     const [searched, setSearched] = useState(ressources);
 
