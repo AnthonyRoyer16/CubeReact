@@ -14,7 +14,7 @@ const http = async (request: RequestInfo): Promise<HttpResponse<any>> => {
     throw error;
   } catch (error) {
     const status = error.status ? error.status : 500;
-    throw { status: status };
+    throw { error: status };
   }
 };
 
