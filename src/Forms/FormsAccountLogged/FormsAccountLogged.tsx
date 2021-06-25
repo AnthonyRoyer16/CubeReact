@@ -117,7 +117,7 @@ function FormsAccountLogged() {
                         <Input type={"number"} placeholder="Code postal" className="login-input"/>
                     </Form.Item>
                 </Col>
-                <Col span={24} style={{textAlign:"center", marginBottom:"30%"}}>
+                <Col span={24} style={{textAlign:"center", marginBottom:"34%"}}>
                     <Button type="primary" size="large" htmlType="submit">
                         Modifier mon compte
                     </Button>

@@ -3,7 +3,7 @@ import { Col, Row } from 'antd';
 import '../App.css';
 import { FileImageOutlined, LikeOutlined, DownloadOutlined, FundViewOutlined, HeartFilled} from '@ant-design/icons';
 //import { GET_RESSOURCES, SEARCH } from "../Modules/Ressources/Actions";
-import { useRessourcesState, useRessourcesDispatch } from "../Modules/Ressources";
+import { useRessourcesState, /*useRessourcesDispatch*/ } from "../Modules/Ressources";
 import { useEffect, useState } from 'react';
 import { where, includes, filter, isNil } from "ramda";
 import { errorMessage } from '../Core/Tools'

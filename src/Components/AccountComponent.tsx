@@ -12,6 +12,7 @@ function AccountComponent() {
 
       const onFinish = (values: any) => {
         message.success('Connecter !');
+        localStorage.setItem("logged", "true");
         sleep(1000).then(() => {
             window.location.href = "/"
         });
@@ -27,7 +28,7 @@ function AccountComponent() {
         <Row style={{position:"absolute", top:"0", left:"0", width:"100%", height:"100%", minHeight:"600px"}}>
             <Col span={14}>
                 <Row style={{width:"100%",height:"100%"}}>
-                    <Col span={24} style={{ display:"flex", transform: "translateX(30%)", alignItems: "center" }}>
+                    <Col className="form-login" span={24} style={{ display:"flex", transform: "translateX(30%)", alignItems: "center" }}>
                         <Form
                             layout="vertical"
                             name="basic"
@@ -71,7 +72,7 @@ function AccountComponent() {
                     </Col>
                 </Row>
             </Col>
-            <Col span={10} style={{backgroundColor:"#75BFBF"}}>
+            <Col className="logo-log-in" span={10} style={{backgroundColor:"#75BFBF"}}>
                 <Row style={{display:"block", marginLeft:"35%", marginTop:"40%"}}>
                     <Image
                         width={200}

@@ -107,7 +107,7 @@ function FormsRegister() {
                         <Input type={"number"} placeholder="Code postal" className="login-input"/>
                     </Form.Item>
                 </Col>
-                <Col span={24} style={{textAlign:"center", marginBottom:"30%"}}>
+                <Col span={24} style={{textAlign:"center", marginBottom:"34%"}}>
                     <Button type="primary" size="large" htmlType="submit">
                         Créer mon compte
                     </Button>

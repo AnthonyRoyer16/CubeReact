@@ -89,3 +89,18 @@
 .forget{
   color:#4EA686 !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .bell-icon {
+    right: 34% !important;
+  }
+  .ant-layout-content{
+    padding-top: 20% !important;
+  }
+  .logo-log-in{
+    display: none !important;
+  }
+  .form-login{
+    transform: translateX(4%) !important;
+  }
+}

@@ -41,24 +41,33 @@ const Page: React.FC<Props> = ({children, header}: Props) => {
       })
     }, [children]);
     
-
+console.log(localStorage.getItem("logged"))
   const menu = (
     <Menu>
-      <Menu.Item key="1" icon={<UserOutlined />}>
-        <Link to="/account">
+      {localStorage.getItem("logged") == "true" ?
+      <>
+      <Menu.Item key="2" icon={<UserOutlined />}>
+      <Link to="/accountLogged">
           Mon Compte
         </Link>
       </Menu.Item>
       <Menu.Item key="2" icon={<UserOutlined />}>
-      <Link to="/accountLogged">
-          Mon Compte (Logged)
+      <Link to="/" onClick={() => (localStorage.setItem("logged", "false"))}>
+          Déconnection
         </Link>
       </Menu.Item>
+      </>:
+      <>
+      <Menu.Item key="1" icon={<UserOutlined />}>
+        <Link to="/account">
+          Se connecter
+          </Link>
+        </Menu.Item>
       <Menu.Item key="3" icon={<UserOutlined />}>
         <Link to="/signIn">
           Inscription
         </Link>
-      </Menu.Item>
+      </Menu.Item></>}
     </Menu>
   );
  
@@ -74,9 +83,9 @@ const Page: React.FC<Props> = ({children, header}: Props) => {
           <Input.Search value={searchRessources}  onChange={(e) => setSearch(e.target.value)} onSearch={sendSearchedRessources} className="center" size="large" style={{width: "60%", display:"block", float:"right"}} placeholder="Rechercher une ressource" />
         </Col>
         <Col span={7}  style={{paddingTop:"15px",display:"flex",flexDirection:"column",alignItems: "flex-end"}} >
-        <BellOutlined className="center" style={{paddingTop:"6px",position:"absolute", right:"15%", color:"white", fontSize:"20px"}}/>
+        <BellOutlined className="center bell-icon" style={{paddingTop:"6px",position:"absolute", right:"16%", color:"white", fontSize:"20px"}}/>
           <Dropdown className="center" overlay={menu} placement="bottomCenter" arrow>
-            <SettingOutlined style={{paddingTop:"6px", color:"white", fontSize:"20px",position:"absolute", right:"5%"}}>
+            <SettingOutlined style={{paddingTop:"6px", color:"white", fontSize:"20px",position:"absolute", right:"5%", marginLeft:"10px"}}>
                <DownOutlined />
             </SettingOutlined>
         </Dropdown>
